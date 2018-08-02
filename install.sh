@@ -27,6 +27,7 @@ npm install ip
 
 echo "----------------------------------"
 echo "Install ROS Kinetic"
+sudo apt-get update
 sudo apt-get install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential
 sudo rosdep init
 rosdep update
@@ -34,7 +35,7 @@ mkdir ~/ros_catkin_ws
 cd ~/ros_catkin_ws
 rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar > kinetic-ros_comm-wet.rosinstall
 wstool init -j8 src kinetic-ros_comm-wet.rosinstall
-rosdep install --from-paths src --ignore-src --rosdistro kinetic -y
+rosdep install -y --from-paths src --ignore-src --rosdistro kinetic -r --os=debian:stretch
 ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release
 cd ..
 cd ros_catkin_ws/devel_isolated/
