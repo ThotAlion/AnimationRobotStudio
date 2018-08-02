@@ -27,7 +27,7 @@ npm install ip
 
 echo "----------------------------------"
 echo "Install ROS Kinetic"
-sudo apt-get install python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential
+sudo apt-get install -y python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential
 sudo rosdep init
 rosdep update
 mkdir ~/ros_catkin_ws
