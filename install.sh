@@ -12,7 +12,7 @@ git config --global credential.helper store
 
 echo "----------------------------------"
 echo "Install Pypot"
-sudo apt-get -y install libopenblas-dev
+sudo apt-get -y install libopenblas-dev python-scipy
 sudo pip install pypot
 
 echo "----------------------------------"
